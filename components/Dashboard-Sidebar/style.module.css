@@ -4,7 +4,7 @@
 .button {
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: 0.8rem;
 }
 .email {
   color: grey;
@@ -42,7 +42,7 @@
   margin: 0.7rem;
   border: 1px solid gray;
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 0.7rem;
   cursor: pointer;
 }
 .SocialIdInfo {
@@ -74,14 +74,6 @@
   font-weight: bold;
   text-transform: uppercase;
 }
-
-
-
-
-
-
-
-
 
 .modalCloseIcon{
   width: 100%;
@@ -162,14 +154,6 @@
   background-color: #4caf50;
 }
 
-.stepNumber {
-  position: absolute;
-  top: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 14px;
-  color: #333;
-}
 
 .stepperControls {
   display: flex;
