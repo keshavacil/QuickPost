@@ -1,0 +1,97 @@
+.icon {
+  margin: 0 10px;
+  color: grey;
+  border-radius: 10%;
+  border: 1px solid grey;
+  padding: 15px;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+.editButton{
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: cornflowerblue;
+  color: white;
+}
+.button1 {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 1rem;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.button1:hover {
+  background-color: #f2f2f2;
+  border: 2px solid grey;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+}
+.button2 {
+  border: none;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  padding: 0.875rem;
+  border-radius: 0.5rem;
+}
+.input {
+  padding: 0.875rem;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  color: black;
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 32%;
+}
+
+.profile {
+  display: flex;
+}
+.sidebar {
+  width: 20%;
+  border-right: 1px solid grey;
+}
+.content {
+  width: 80%;
+  margin: 2rem;
+  border: 1px solid grey;
+  border-radius: 0.5rem;
+}
+.contentTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid grey;
+}
+.contentTopLeft {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.contentBottom {
+  padding: 1.5rem 1rem;
+}
+
+.form {
+  display: flex;
+  gap: 1%;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.profile{
+  height: 84vh;
+}

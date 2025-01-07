@@ -1,0 +1,79 @@
+.subscriptionPage{
+    height: 100vh;
+}
+.subscriptionPageHeader{
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+    background-color: #1c1d20;
+    color: white;
+}
+
+.subscriptionPageContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    gap: 1.5rem;
+
+   
+}
+.subscriptionPageContentInner{
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    /* width: 22%; */
+    /* background-color: bisque; */
+}
+
+.Pointers{
+    display: flex;
+    padding: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.Pointers > div{
+    display: flex;
+    align-items: center;
+}
+
+.Pointers > div > .icon{
+    margin-right: 0.5rem;
+}
+.subscriptionPageContentTop > h4{
+    font-size: 2rem;
+    /* font-weight: 700; */
+    font-family: 'Times New Roman', Times, serif;
+    color: rosybrown;
+    padding: 0.5rem 0 1rem 0;
+    
+}
+.subscriptionPageContentTop > h2{
+    font-size: 2.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: #113b55;
+    padding: 0.5rem 0 1rem 0;
+    
+}
+.subscriptionPageContentTop > button{
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: burlywood;
+    padding: 1rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.subscriptionPageContentBottom > h6{
+    font-size: 1.1rem;
+}
+
+.Pointers > div > p{
+    color: #113b55;
+}

@@ -1,0 +1,203 @@
+.sidebar {
+  display: block;
+}
+.button {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+.email {
+  color: grey;
+}
+.sidebar button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background-color: transparent;
+  color: grey;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+.icon {
+  color: gray;
+}
+.button:hover {
+  background-color: aqua;
+  color: gray;
+}
+.profileInfo {
+  display: flex;
+  align-items: center;
+  margin: 0.7rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+}
+
+.Social {
+  display: flex;
+  align-items: center;
+  margin: 0.7rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+.SocialIdInfo {
+  width: 78%;
+}
+.icon1 {
+  justify-self: end;
+}
+.profilePic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  font-size: 1.2rem;
+  color: #555;
+  overflow: hidden;
+}
+
+.profilePic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.initials {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+.modalCloseIcon{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.modal {
+  justify-content: space-between;
+  width: 80%;
+  max-width: 900px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.modalContent {
+  display: flex;
+  flex: auto;
+}
+.modalLeft {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 3px solid #f0f0f0; 
+}
+
+.uploadContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.uploadButton {
+  padding: 15px 30px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.uploadButton:hover {
+  background-color: #45a049;
+}
+
+.modalRight {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.progressContainer {
+  margin-bottom: 20px;
+}
+
+.progressBarWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.progressStep {
+  height: 10px;
+  background-color: #ddd;
+  position: relative;
+}
+
+.progressStep.active {
+  background-color: #4caf50;
+}
+
+.stepNumber {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #333;
+}
+
+.stepperControls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.stepperButton:disabled {
+  visibility: hidden;
+}
+
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stepperControls > button {
+  background-color: #4CAF50;
+  border: 1px solid #4CAF50;
+  text-align: center;
+  gap: 1rem;
+  width: 45%;
+  color: white;
+  padding: 0.875rem;
+  border-radius: 0.5rem;
+}
