@@ -9,7 +9,7 @@
 .email {
   color: grey;
 }
-.sidebar button {
+.button button {
   display: block;
   width: 100%;
   text-align: left;
@@ -75,7 +75,7 @@
   text-transform: uppercase;
 }
 
-.modalCloseIcon{
+.modalCloseIcon {
   width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -101,7 +101,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-right: 3px solid #f0f0f0; 
+  border-right: 3px solid #f0f0f0;
 }
 .modalRight {
   flex: 1;
@@ -131,7 +131,6 @@
   background-color: #4caf50;
 }
 
-
 .stepperControls {
   display: flex;
   justify-content: space-between;
@@ -153,8 +152,8 @@
   align-items: center;
 }
 .stepperControls > button {
-  background-color: #4CAF50;
-  border: 1px solid #4CAF50;
+  background-color: #4caf50;
+  border: 1px solid #4caf50;
   text-align: center;
   gap: 1rem;
   width: 45%;
@@ -162,7 +161,6 @@
   padding: 0.875rem;
   border-radius: 0.5rem;
 }
-
 
 .uploadContainer {
   display: flex;
@@ -172,25 +170,23 @@
 }
 
 .filePreviewContainer {
-  width: 350px;
-  height: 500px;
   margin-bottom: 15px;
 }
 
 .previewImage {
-  width: 350px;
+  width: 400px;
   height: 500px;
   object-fit: contain;
 }
 
 .previewVideo {
-  width: 100%;
+  width: 400px;
   height: 500px;
   object-fit: cover;
 }
 
 .uploadButton {
-  background-color: #4267B2;
+  background-color: #4267b2;
   color: white;
   padding: 10px 20px;
   cursor: pointer;
@@ -203,4 +199,31 @@
 
 .uploadButton:hover {
   background-color: #365899;
+}
+
+.removeButton {
+  background-color: rgb(242, 30, 30);
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 14px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.removeButtonContainer{
+  display: flex;
+  flex-direction: column;
+  
+}
+.buttonBox{
+  display: flex;
+  justify-content: space-around;
+}
+
+.uploadHelpText {
+  font-size: 0.875rem;
+  color: #777;
+  padding: 1rem 0 0 0;
 }
