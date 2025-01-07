@@ -13,14 +13,14 @@ const UploadFile = ({ uploadedFile, setUploadedFile }) => {
     if (file) {
       setError(null);
       if (file.type.startsWith("image/")) {
-        if (file.size > 104857600) { // 100MB = 104857600 bytes
+        if (file.size > 104857600) { 
           setError("Image file size exceeds the limit of 100MB.");
           setIsErrorModalVisible(true);
           return;
         }
         setFileType("image");
       } else if (file.type.startsWith("video/")) {
-        if (file.size > 1073741824) { // 1024MB = 1073741824 bytes
+        if (file.size > 1073741824) { 
           setError("Video file size exceeds the limit of 1024MB.");
           setIsErrorModalVisible(true);
           return;
@@ -85,7 +85,7 @@ const UploadFile = ({ uploadedFile, setUploadedFile }) => {
         {uploadedFile ? "Change File" : "Upload Photos/Videos"}
       </label>
       <p id="file-upload-help" className={styles.uploadHelpText}>
-        Only image and video files are allowed. Max file size: 10MB.
+        Only image and video files are allowed. Max file size: 100MB.
       </p>
     </div>
   );
