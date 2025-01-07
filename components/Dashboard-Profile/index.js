@@ -5,7 +5,7 @@ import fetchData from "../Service/GetUser";
 
 const DashoardProfile = () => {
   const user = {
-    name: "John Doe",
+    name: "sadasd",
     email: "Jhondoe@gmail.com",
   };
 
