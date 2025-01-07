@@ -29,14 +29,14 @@ const DashboardSidebar = ({ user, navigationItems, socialPlatforms }) => {
     setSelectedPlatform(platform);
     setIsModalOpen(true);
     setCurrentStep(1);
-    setUploadedFile(null); // Reset file when opening the modal
+    setUploadedFile(null); 
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedPlatform(null);
     setCurrentStep(1);
-    setUploadedFile(null); // Reset file when closing the modal
+    setUploadedFile(null); 
   };
 
   const nextStep = () => {
@@ -54,7 +54,7 @@ const DashboardSidebar = ({ user, navigationItems, socialPlatforms }) => {
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setUploadedFile(URL.createObjectURL(file)); // Create a preview URL for the file
+      setUploadedFile(URL.createObjectURL(file)); 
     }
   };
 
@@ -162,14 +162,13 @@ const DashboardSidebar = ({ user, navigationItems, socialPlatforms }) => {
             </div>
             <div className={styles.modalContent}>
               <div className={styles.modalLeft}>
-                {/* File preview is displayed above the upload button */}
                 {uploadedFile && (
                   <div className={styles.filePreviewContainer}>
                     <img
                       src={uploadedFile}
                       alt="Uploaded Preview"
                       style={{
-                        width: "250px",
+                        width: "350px",
                         height: "500px",
                         objectFit: "cover",
                         marginBottom: "15px",
@@ -203,7 +202,6 @@ const DashboardSidebar = ({ user, navigationItems, socialPlatforms }) => {
                         }`}
                         style={{ width: `${100 / 3}%` }}
                       >
-                        <div className={styles.stepNumber}>{step}</div>
                       </div>
                     ))}
                   </div>
