@@ -9,6 +9,7 @@
   background-color: white;
   border-radius: 0.5rem;
   width: 400px;
+  min-height: 500px;
 }
 .container h1 {
   text-align: center;

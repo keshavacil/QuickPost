@@ -56,7 +56,7 @@ const LoginPage = () => {
   return (
     <div className={styles.login}>
       <div className={styles.container}>
-        <h1>Quick Post</h1>
+        <h1>Coveify</h1>
         <form className={styles.form} onSubmit={handleLogin}>
           <div className={styles.input}>
             <label htmlFor="email">Email</label>
