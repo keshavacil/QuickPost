@@ -1,3 +1,4 @@
+import  styles from "./style.module.css";
 const StepContent = ({ selectedPlatform, currentStep }) => {
     switch (currentStep) {
       case 1:
@@ -9,14 +10,14 @@ const StepContent = ({ selectedPlatform, currentStep }) => {
         );
       case 2:
         return (
-          <div>
+          <div className={styles.stepContent}>
             <h3>Step 2: Platform Settings</h3>
             <p>Settings and configurations for {selectedPlatform}...</p>
           </div>
         );
       case 3:
         return (
-          <div>
+          <div className={styles.stepContent}>
             <h3>Step 3: Final Review</h3>
             <p>Review your information for {selectedPlatform}...</p>
           </div>

@@ -13,15 +13,15 @@ const UploadFile = ({ uploadedFile, setUploadedFile }) => {
     if (file) {
       setError(null);
       if (file.type.startsWith("image/")) {
-        if (file.size > 104857600) { 
+        if (file.size > 10485760) {
           setError("Image file size exceeds the limit of 100MB.");
           setIsErrorModalVisible(true);
           return;
         }
         setFileType("image");
       } else if (file.type.startsWith("video/")) {
-        if (file.size > 1073741824) { 
-          setError("Video file size exceeds the limit of 1024MB.");
+        if (file.size > 1073741824) {
+          setError("Video file size exceeds the limit of 1GB.");
           setIsErrorModalVisible(true);
           return;
         }
@@ -44,7 +44,6 @@ const UploadFile = ({ uploadedFile, setUploadedFile }) => {
       }
     }
   };
-
   const closeErrorModal = () => {
     setIsErrorModalVisible(false);
   };
@@ -54,39 +53,44 @@ const UploadFile = ({ uploadedFile, setUploadedFile }) => {
       {isErrorModalVisible && (
         <ErrorModal message={error} onClose={closeErrorModal} />
       )}
-
-      {uploadedFile && (
-        <div className={styles.filePreviewContainer}>
-          {fileType === "image" ? (
-            <img
-              src={uploadedFile}
-              alt="Uploaded Preview"
-              className={styles.previewImage}
-            />
-          ) : fileType === "video" ? (
-            <video
-              src={uploadedFile}
-              controls
-              className={styles.previewVideo}
-            />
-          ) : null}
-        </div>
-      )}
-
-      <input
-        type="file"
-        id="file-upload"
-        accept="image/*,video/*"
-        style={{ display: "none" }}
-        onChange={handleFileUpload}
-        aria-describedby="file-upload-help"
-      />
-      <label htmlFor="file-upload" className={styles.uploadButton}>
-        {uploadedFile ? "Change File" : "Upload Photos/Videos"}
-      </label>
-      <p id="file-upload-help" className={styles.uploadHelpText}>
-        Only image and video files are allowed. Max file size: 100MB.
-      </p>
+      <div className={styles.previewContainer}>
+        {uploadedFile && (
+          <div className={styles.filePreviewContainer}>
+            {fileType === "image" ? (
+              <img
+                src={uploadedFile}
+                alt="Uploaded Preview"
+                className={styles.previewImage}
+              />
+            ) : fileType === "video" ? (
+              <video
+                src={uploadedFile}
+                controls
+                className={styles.previewVideo}
+              />
+            ) : null}
+          </div>
+        )}
+      </div>
+      <div className={styles.uploadButtonContainer}>
+        <input
+          type="file"
+          id="file-upload"
+          accept="image/*,video/*"
+          style={{ display: "none" }}
+          onChange={handleFileUpload}
+          aria-describedby="file-upload-help"
+        />
+        <label htmlFor="file-upload" className={styles.uploadButton}>
+          {uploadedFile ? "Change File" : "Upload Photos/Videos"}
+        </label>
+        <p id="file-upload-help" className={styles.uploadHelpText}>
+          Image Should Be Less Then 100MB. 
+        </p>
+        <p id="file-upload-help" className={styles.uploadHelpText}>
+          Reels Should Be Less Then 1GB. 
+        </p>
+      </div>
     </div>
   );
 };

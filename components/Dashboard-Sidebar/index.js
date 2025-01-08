@@ -2,8 +2,6 @@ import { useState } from "react";
 import styles from "./style.module.css";
 import SocialMediaProfile from "./SocialMediaProfile";
 import Modal from "./Modal";
-import ProfileInfo from "./ProfileInfo";
-import Navigation from "./Navigation";
 
 const DashboardSidebar = ({ user, navigationItems, socialPlatforms }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -11,6 +9,12 @@ const DashboardSidebar = ({ user, navigationItems, socialPlatforms }) => {
   const [currentStep, setCurrentStep] = useState(1);
   const [uploadedFile, setUploadedFile] = useState(null);
   const [isValidAspectRatio, setIsValidAspectRatio] = useState(true);
+
+  const hardcodedAccounts = [
+    
+  ];
+
+  const userAccounts = user?.accounts || hardcodedAccounts;
 
   const openModal = (platform) => {
     setSelectedPlatform(platform);
@@ -40,10 +44,12 @@ const DashboardSidebar = ({ user, navigationItems, socialPlatforms }) => {
     }
   };
 
+  const getPlatformAccounts = (platform) => {
+    return userAccounts.filter((account) => account.platform === platform);
+  };
+
   return (
     <div className={styles.sidebar}>
-      <ProfileInfo user={user} />
-      <Navigation navigationItems={navigationItems} />
       <div className={styles.socialProfiles}>
         {socialPlatforms.map((platform, index) => (
           <SocialMediaProfile
@@ -63,6 +69,7 @@ const DashboardSidebar = ({ user, navigationItems, socialPlatforms }) => {
           nextStep={nextStep}
           prevStep={prevStep}
           selectedPlatform={selectedPlatform}
+          accounts={hardcodedAccounts}
         />
       )}
     </div>

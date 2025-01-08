@@ -1,0 +1,31 @@
+.accountSelection{
+    min-height: 400px;
+    width: 300px;
+    
+}
+
+.accountSelection h3{
+    font-size: 22px;
+    padding: 1rem;
+    text-align: center;
+
+}
+
+.accountSelection p{
+    font-size: 18px;
+    padding: 2rem;
+    color: darkgray;
+    text-align: center;
+    
+
+}
+.accountSelection ul{
+    list-style-type: none;
+    text-align: center;
+}
+
+.accountSelection ul li{
+    color: darkgray;
+    font-size: 18px;
+    font-weight: 500;
+}

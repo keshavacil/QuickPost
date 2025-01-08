@@ -1,8 +1,6 @@
 import {
-  faAngleLeft,
   faBell,
   faCircleQuestion,
-  faCircleXmark,
   faGear,
   faUserLarge,
 } from "@fortawesome/free-solid-svg-icons";
@@ -14,6 +12,12 @@ import styles from "./style.module.css";
 const DashoardHeader = () => {
   const router = useRouter();
 
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("tokenExpiry");
+    router.push("/login");
+  };
+
   const handleUpgrade = () => {
     router.push("/subscribe");
   };
@@ -21,14 +25,14 @@ const DashoardHeader = () => {
   return (
     <div className={styles.header}>
       <div className={styles.left}>
-        <h2>Quick Post</h2>
+        <h2>Coveify</h2>
       </div>
       <div className={styles.center}>
         <ul>
           <li>Dashboard</li>
-          <li>News</li>
-          <li>Support</li>
-          <li>More</li>
+          <li>Calander</li>
+          <li>Analytics</li>
+          <li>Help</li>
         </ul>
       </div>
       <div className={styles.right}>
@@ -40,6 +44,7 @@ const DashoardHeader = () => {
         />
         <FontAwesomeIcon icon={faGear} size="1x" style={{ color: "grey" }} />
         <button onClick={handleUpgrade}>Upgrade</button>
+        <button onClick={handleLogout}>Logout</button>
         <FontAwesomeIcon
           icon={faUserLarge}
           size="1x"
