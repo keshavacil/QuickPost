@@ -3,6 +3,8 @@ import DashoardSidebar from "../Dashboard-Sidebar";
 import styles from "./style.module.css";
 import { useRouter } from "next/router";
 import { getUserData } from "../Service/GetUser";
+import { DotLoader } from "react-spinners";
+import { updateUserData } from "../Service/UpdateUserData";
 
 const DashoardProfile = () => {
   const router = useRouter();
@@ -10,17 +12,28 @@ const DashoardProfile = () => {
 
   const [profileData, setProfileData] = useState(null);
   const [isEditable, setIsEditable] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [isSaving, setIsSaving] = useState(false);
+  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchUserData = async () => {
+  const fetchUserData = async () => {
+    setLoading(true);
+    try {
       const result = await getUserData();
       if (result.success) {
         setProfileData(result.user);
       } else {
-        console.error(result.message);
+        setError(result.message || "Error fetching user data.");
       }
-    };
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+      setError("Error fetching user data.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchUserData();
   }, []);
 
@@ -32,12 +45,47 @@ const DashoardProfile = () => {
     }));
   };
 
-  const toggleEditMode = () => {
+  const toggleEditMode = async () => {
+    if (isEditable) {
+      setIsSaving(true);
+      setError(null);
+
+      try {
+        console.log("profile data before update", profileData);
+
+        const result = await updateUserData(profileData);
+        console.log("dfkdnresult", result);
+
+        if (result.success) {
+          setProfileData(result.user);
+          alert("Profile updated successfully!");
+
+          await fetchUserData();
+        } else {
+          setError(
+            result.message || "An error occurred while saving your profile."
+          );
+        }
+      } catch (error) {
+        console.error("Error updating user data:", error);
+        setError("Error updating your profile.");
+      } finally {
+        setIsSaving(false);
+      }
+    }
     setIsEditable(!isEditable);
   };
 
+  if (loading) {
+    return (
+      <div className={styles.loaderContainer}>
+        <DotLoader color="#36D7B7" loading={loading} size={50} />
+      </div>
+    );
+  }
+
   if (!profileData) {
-    return <div>Loading...</div>;
+    return <div>No Profile Data Available</div>;
   }
 
   return (
@@ -49,51 +97,197 @@ const DashoardProfile = () => {
         <div className={styles.contentBottom}>
           <div className={styles.header}>
             <h4>Profile Information</h4>
-            <button className={styles.editButton} onClick={toggleEditMode}>
+            <button
+              className={styles.editButton}
+              onClick={toggleEditMode}
+              disabled={isSaving}
+            >
               {isEditable ? "Save Changes" : "Edit Profile"}
             </button>
           </div>
           <div className={styles.form}>
-            {Object.keys(profileData).map((key) => {
-              if (key === "dob" || key === "gender") {
-                return (
-                  <div className={styles.inputContainer} key={key}>
-                    <label className={styles.label}>
-                      {key.charAt(0).toUpperCase() + key.slice(1)}
-                    </label>
-                    <input
-                      type={key === "dob" ? "date" : "text"}
-                      name={key}
-                      value={profileData[key] || ""}
-                      placeholder={`Enter ${
-                        key.charAt(0).toUpperCase() + key.slice(1)
-                      }`}
-                      className={styles.input}
-                      disabled={!isEditable}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                );
-              }
-              return (
-                <div className={styles.inputContainer} key={key}>
-                  <label className={styles.label}>
-                    {key.charAt(0).toUpperCase() + key.slice(1)}
-                  </label>
-                  <input
-                    type="text"
-                    name={key}
-                    value={profileData[key] || ""}
-                    placeholder={`Enter ${
-                      key.charAt(0).toUpperCase() + key.slice(1)
-                    }`}
-                    className={styles.input}
-                    disabled={!isEditable}
-                    onChange={handleInputChange}
-                  />
-                </div>
-              );
-            })}
+            {error && <div className={styles.errorMessage}>{error}</div>}
+
+            {/* First Name Field */}
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>First Name</label>
+              <input
+                type="text"
+                name="first_name"
+                value={profileData.first_name || ""}
+                placeholder="Enter First Name"
+                className={styles.input}
+                disabled={!isEditable}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            {/* Middle Name Field */}
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>Middle Name</label>
+              <input
+                type="text"
+                name="middle_name"
+                value={profileData.middle_name || ""}
+                placeholder="Enter Middle Name"
+                className={styles.input}
+                disabled={!isEditable}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            {/* Last Name Field */}
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>Last Name</label>
+              <input
+                type="text"
+                name="last_name"
+                value={profileData.last_name || ""}
+                placeholder="Enter Last Name"
+                className={styles.input}
+                disabled={!isEditable}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            {/* Date of Birth Field */}
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>Date of Birth</label>
+              <input
+                type="date"
+                name="dob"
+                value={profileData.dob || ""}
+                className={styles.input}
+                disabled={!isEditable}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            {/* Gender Field */}
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>Gender</label>
+              <input
+                type="text"
+                name="gender"
+                value={profileData.gender || ""}
+                placeholder="Enter Gender"
+                className={styles.input}
+                disabled={!isEditable}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            {/* Email Field */}
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>Email</label>
+              <input
+                type="email"
+                name="email"
+                value={profileData.email || ""}
+                placeholder="Enter Email"
+                className={styles.input}
+                disabled={!isEditable}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            {/* Username Field */}
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>Username</label>
+              <input
+                type="text"
+                name="username"
+                value={profileData.username || ""}
+                placeholder="Enter Username"
+                className={styles.input}
+                disabled={!isEditable}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            {/* Phone Number Field */}
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>Phone Number</label>
+              <input
+                type="text"
+                name="phone_no"
+                value={profileData.phone_no || ""}
+                placeholder="Enter Phone Number"
+                className={styles.input}
+                disabled={!isEditable}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            {/* Address Field */}
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>Address</label>
+              <input
+                type="text"
+                name="address"
+                value={profileData.address || ""}
+                placeholder="Enter Address"
+                className={styles.input}
+                disabled={!isEditable}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            {/* City Field */}
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>City</label>
+              <input
+                type="text"
+                name="city"
+                value={profileData.city || ""}
+                placeholder="Enter City"
+                className={styles.input}
+                disabled={!isEditable}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            {/* State Field */}
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>State</label>
+              <input
+                type="text"
+                name="state"
+                value={profileData.state || ""}
+                placeholder="Enter State"
+                className={styles.input}
+                disabled={!isEditable}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            {/* Postal Code Field */}
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>Postal Code</label>
+              <input
+                type="text"
+                name="postal_code"
+                value={profileData.postal_code || ""}
+                placeholder="Enter Postal Code"
+                className={styles.input}
+                disabled={!isEditable}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            {/* Country Field */}
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>Country</label>
+              <input
+                type="text"
+                name="country"
+                value={profileData.country || ""}
+                placeholder="Enter Country"
+                className={styles.input}
+                disabled={!isEditable}
+                onChange={handleInputChange}
+              />
+            </div>
           </div>
         </div>
       </div>

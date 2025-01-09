@@ -11,7 +11,7 @@ export const loginUser = async (email, password) => {
       const data = await response.json();
   
       if (response.status === 200) {
-        const expiryTime = new Date().getTime() + 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
+        const expiryTime = new Date().getTime() + 7 * 24 * 60 * 60 * 1000;
         localStorage.setItem("authToken", data.access_token);
         localStorage.setItem("uuid", data.uuid);
         localStorage.setItem("tokenExpiry", expiryTime);
