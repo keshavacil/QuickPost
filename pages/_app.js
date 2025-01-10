@@ -11,9 +11,9 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     const authCheck = async () => {
       const isAuthenticated = await checkAuthToken();
-      if (!isAuthenticated && router.pathname !== "/login") {
-        router.push("/login");
-      }
+      // if (!isAuthenticated && router.pathname !== "/login") {
+      //   router.push("/login");
+      // }
       setIsLoading(false); 
     };
 

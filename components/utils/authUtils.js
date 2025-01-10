@@ -1,6 +1,7 @@
 export const checkAuthToken = () => {
     const token = localStorage.getItem("authToken");
     const tokenExpiry = localStorage.getItem("tokenExpiry");
+    const uuid = localStorage.getItem("uuid")
     if (!token || !tokenExpiry) {
       return false;
     }

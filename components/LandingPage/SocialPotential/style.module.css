@@ -1,0 +1,81 @@
+.SocialPotential {
+  padding: 7.5rem 2.5rem;
+  width: 100%;
+  background: rgba(245, 244, 244, 1);
+}
+
+.One h2 {
+  font-family: "Fugaz One";
+  font-size: 56px;
+  font-weight: bold;
+  text-align: left;
+  color: rgba(7, 7, 7, 1);
+}
+.One p {
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 400;
+  text-align: left;
+  color: rgba(37, 37, 37, 1);
+}
+.Two {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.InnerTwo {
+  width: 50%;
+  display: flex;
+  border: 1px solid black;
+  border-radius: 10px;
+  justify-content: space-between;
+}
+.left {
+  padding: 3rem 2rem 0 2rem;
+}
+.left h4 {
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+.left h2 {
+  font-family: "Open Sans";
+  font-size: 28px;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+.left p {
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+.left a {
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.left a > span {
+  padding-left: 0.5rem;
+}
+
+.Three {
+  border: 1px solid black;
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(
+    178.84deg,
+    #9bd0e0 0.97%,
+    rgba(162, 213, 230, 0.54) 156.23%
+  );
+  background-blend-mode: multiply;
+}

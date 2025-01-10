@@ -1,0 +1,42 @@
+.Pricing {
+  padding: 7.5rem 0;
+  text-align: center;
+  background: linear-gradient(127.43deg, #f8f8f8 28.32%, #929292 158.35%);
+}
+.Pricing h2 {
+  font-family: "Fugaz One";
+  font-size: 56px;
+  font-weight: 400;
+  width: 33%;
+  margin: auto;
+}
+.Pricing p {
+  margin-top: 1rem;
+  font-family: "Open Sans";
+  font-size: 22px;
+  font-weight: 400;
+  width: 40%;
+  margin: auto;
+}
+.Pricing h3 {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Fugaz One";
+  font-size: 36px;
+  font-weight: 400;
+}
+.Pricing h3 > span {
+  font-family: "Fugaz One";
+  font-size: 108px;
+  font-weight: 400;
+  line-height: 118.8px;
+}
+.Pricing button {
+  margin-top: 40px;
+  background-color: rgba(8, 7, 43, 1);
+  border-radius: 8px;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+}

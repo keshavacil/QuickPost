@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
-import styles from "./style.module.css";
 import { loginUser } from "../Service/loginservice";
 import { checkAuthToken } from "../utils/authUtils";
 import { signupUser } from "../Service/signupservice";
@@ -92,94 +91,103 @@ const LoginPage = () => {
   };
 
   return (
-    <div className={styles.login}>
-      <div className={styles.container}>
-        <div className={styles.logo}>
-          <h1>Coveify</h1>
+    <div className="flex flex-col md:flex-row bg-white min-h-screen">
+      <div className="flex-1 flex flex-col justify-center items-center px-8 md:px-20 py-16">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-gray-800">
+            {isSignup ? "Sign Up" : "Log In"}
+          </h2>
         </div>
-        <div className={styles.header}>
-          <h2>{isSignup ? "Sign Up" : "Log In"}</h2>
-          <form className={styles.form} onSubmit={handleLoginOrSignup}>
-            <div className={styles.input}>
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                  validateEmail(e.target.value);
-                }}
-                className={
-                  emailError
-                    ? styles.error
-                    : email && !emailError
-                    ? styles.valid
-                    : ""
-                }
-              />
-            </div>
-            <div className={styles.input}>
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                  validatePassword(e.target.value);
-                }}
-                className={
-                  passwordError
-                    ? styles.error
-                    : password && !passwordError
-                    ? styles.valid
-                    : ""
-                }
-              />
-            </div>
-            {error && <p className={styles.error}>{error}</p>}
-            <div className={styles.Submitbutton}>
-              <button type="submit" disabled={isLoading}>
-                {isLoading
-                  ? isSignup
-                    ? "Signing Up..."
-                    : "Logging In..."
-                  : isSignup
-                  ? "Sign Up"
-                  : "Log In"}
-              </button>
-            </div>
-            <div className={styles.Options}>
+        <form
+          onSubmit={handleLoginOrSignup}
+          className="w-full max-w-md space-y-6"
+        >
+          <div className="space-y-2">
+            <label htmlFor="email" className="block text-gray-700 font-medium">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                validateEmail(e.target.value);
+              }}
+              className={`w-full px-4 py-3 border bg-white rounded-lg ${
+                emailError
+                  ? "border-red-500"
+                  : email && !emailError
+                  ? "border-blue-500"
+                  : "border-gray-300"
+              } focus:outline-none focus:ring-2 focus:ring-blue-500`}
+              
+            />
+          </div>
+          <div className="space-y-2">
+            <label
+              htmlFor="password"
+              className="block text-gray-700 font-medium"
+            >
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                validatePassword(e.target.value);
+              }}
+              className={`w-full px-4 py-3 border bg-white rounded-lg ${
+                passwordError
+                  ? "border-red-500"
+                  : password && !passwordError
+                  ? "border-blue-500"
+                  : "border-gray-300"
+              } focus:outline-none focus:ring-2 focus:ring-blue-500`}
+            />
+          </div>
+          {error && <p className="text-red-500 text-sm">{error}</p>}
+          <div className="space-y-4">
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition disabled:bg-blue-400"
+            >
+              {isLoading
+                ? isSignup
+                  ? "Signing Up..."
+                  : "Logging In..."
+                : isSignup
+                ? "Sign Up"
+                : "Log In"}
+            </button>
+            <div className="flex justify-between text-sm text-gray-600">
               <p
-                className={styles.forgotPassword}
+                className="cursor-pointer hover:text-blue-500"
                 onClick={() => setIsSignup(!isSignup)}
               >
                 {isSignup
                   ? "Already have an account? Log In"
                   : "Create an Account"}
               </p>
-              <p className={styles.forgotPassword}>Forgot your Password?</p>
+              <p className="cursor-pointer hover:text-blue-500">
+                Forgot your Password?
+              </p>
             </div>
-          </form>
-        </div>
-        <div className={styles.loginFooter}>
-          <div className={styles.loginFooterInner}>
-            <a href="">Terms of Service</a>
-            <a href="">Privacy Policy</a>
-            <a href="">Security</a>
           </div>
-        </div>
+        </form>
       </div>
-      <div className={styles.rightImage}>
-        <img
-          src="Images\LoginBanner\yLxJlkkUSLu7GjZHiPfu7w.webp"
-          alt="Login Image"
-          className={styles.loginImage}
-        />
-      </div>
+      <div
+        className="hidden md:block flex-1 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            'url("Images/LoginBanner/yLxJlkkUSLu7GjZHiPfu7w.webp")',
+        }}
+      ></div>
     </div>
   );
 };

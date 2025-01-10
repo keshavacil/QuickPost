@@ -1,0 +1,42 @@
+.common {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem;
+  background-color: white;
+  padding-top: 53px;
+  padding-bottom: 112px;
+}
+.left {
+  width: 40%;
+  padding-top: 36px;
+}
+.left h2 {
+  font-family: "Fugaz One";
+  font-size: 72px;
+  font-weight: 400;
+  text-align: left;
+  color: #232323;
+}
+.left p {
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: left;
+  color: #252525;
+  padding: 1.5rem 0;
+}
+.left button {
+  border-radius: 8px;
+  background-color: #000000;
+  color: rgba(255, 255, 255, 0.77);
+  padding: 13px 1.5rem;
+  margin-bottom: 48px;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 400;
+}
+.isEnabled{
+    display: var(--display);
+}

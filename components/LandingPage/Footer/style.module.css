@@ -1,0 +1,38 @@
+.footer {
+  padding: 64px 40px;
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+}
+.left {
+  color: white;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.right {
+  display: flex;
+  color: white;
+}
+.links {
+  width: 136px;
+}
+.links:last-child {
+  width: 96px;
+}
+.linksInner {
+  display: flex;
+  flex-direction: column;
+}
+
+.linksInner li {
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 1rem;
+}
