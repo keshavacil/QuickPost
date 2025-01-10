@@ -26,7 +26,6 @@ const DashoardProfile = () => {
         setError(result.message || "Error fetching user data.");
       }
     } catch (error) {
-      console.error("Error fetching user data:", error);
       setError("Error fetching user data.");
     } finally {
       setLoading(false);
@@ -51,10 +50,8 @@ const DashoardProfile = () => {
       setError(null);
 
       try {
-        console.log("profile data before update", profileData);
 
         const result = await updateUserData(profileData);
-        console.log("dfkdnresult", result);
 
         if (result.success) {
           setProfileData(result.user);
@@ -67,7 +64,6 @@ const DashoardProfile = () => {
           );
         }
       } catch (error) {
-        console.error("Error updating user data:", error);
         setError("Error updating your profile.");
       } finally {
         setIsSaving(false);

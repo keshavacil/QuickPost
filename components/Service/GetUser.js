@@ -1,12 +1,11 @@
 export const getUserData = async () => {
-  const uuid = localStorage.getItem("uuid");
   const authToken = localStorage.getItem("authToken");
 
-  if (!uuid || !authToken) {
+  if (!authToken) {
     return { success: false, message: "User is not logged in." };
   }
   try {
-    const response = await fetch(`https://thundering-adara-mramitdas-10783ebf.koyeb.app/api/v1/user/${uuid}`, {
+    const response = await fetch(`https://thundering-adara-mramitdas-10783ebf.koyeb.app/api/v1/user/info`, {
       method: "GET",
       headers: {
         "Authorization": `Bearer ${authToken}`,  
