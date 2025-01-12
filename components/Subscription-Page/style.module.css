@@ -15,16 +15,12 @@
     align-items: center;
     padding-top: 2rem;
     gap: 1.5rem;
-
-   
 }
 .subscriptionPageContentInner{
     border: none;
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-    /* width: 22%; */
-    /* background-color: bisque; */
 }
 
 .Pointers{
@@ -43,7 +39,6 @@
 }
 .subscriptionPageContentTop > h4{
     font-size: 2rem;
-    /* font-weight: 700; */
     font-family: 'Times New Roman', Times, serif;
     color: rosybrown;
     padding: 0.5rem 0 1rem 0;
@@ -76,4 +71,13 @@
 
 .Pointers > div > p{
     color: #113b55;
+}
+
+@media (max-width: 768px) {
+    .subscriptionPageHeader h1{
+        font-size: 26px;
+    }
+    .subscriptionPageContent{
+    flex-direction: column;
+    }
 }

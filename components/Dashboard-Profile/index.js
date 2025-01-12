@@ -50,7 +50,6 @@ const DashoardProfile = () => {
       setError(null);
 
       try {
-
         const result = await updateUserData(profileData);
 
         if (result.success) {
@@ -102,9 +101,7 @@ const DashoardProfile = () => {
             </button>
           </div>
           <div className={styles.form}>
-            {error && <div className={styles.errorMessage}>{error}</div>}
-
-            {/* First Name Field */}
+            {/* {error && <div className={styles.errorMessage}>{error}</div>} */}
             <div className={styles.inputContainer}>
               <label className={styles.label}>First Name</label>
               <input
@@ -117,8 +114,6 @@ const DashoardProfile = () => {
                 onChange={handleInputChange}
               />
             </div>
-
-            {/* Middle Name Field */}
             <div className={styles.inputContainer}>
               <label className={styles.label}>Middle Name</label>
               <input
@@ -131,8 +126,6 @@ const DashoardProfile = () => {
                 onChange={handleInputChange}
               />
             </div>
-
-            {/* Last Name Field */}
             <div className={styles.inputContainer}>
               <label className={styles.label}>Last Name</label>
               <input
@@ -145,8 +138,6 @@ const DashoardProfile = () => {
                 onChange={handleInputChange}
               />
             </div>
-
-            {/* Date of Birth Field */}
             <div className={styles.inputContainer}>
               <label className={styles.label}>Date of Birth</label>
               <input
@@ -158,8 +149,6 @@ const DashoardProfile = () => {
                 onChange={handleInputChange}
               />
             </div>
-
-            {/* Gender Field */}
             <div className={styles.inputContainer}>
               <label className={styles.label}>Gender</label>
               <input
@@ -172,8 +161,6 @@ const DashoardProfile = () => {
                 onChange={handleInputChange}
               />
             </div>
-
-            {/* Email Field */}
             <div className={styles.inputContainer}>
               <label className={styles.label}>Email</label>
               <input
@@ -186,8 +173,6 @@ const DashoardProfile = () => {
                 onChange={handleInputChange}
               />
             </div>
-
-            {/* Username Field */}
             <div className={styles.inputContainer}>
               <label className={styles.label}>Username</label>
               <input
@@ -200,8 +185,6 @@ const DashoardProfile = () => {
                 onChange={handleInputChange}
               />
             </div>
-
-            {/* Phone Number Field */}
             <div className={styles.inputContainer}>
               <label className={styles.label}>Phone Number</label>
               <input
@@ -214,8 +197,6 @@ const DashoardProfile = () => {
                 onChange={handleInputChange}
               />
             </div>
-
-            {/* Address Field */}
             <div className={styles.inputContainer}>
               <label className={styles.label}>Address</label>
               <input
@@ -228,8 +209,6 @@ const DashoardProfile = () => {
                 onChange={handleInputChange}
               />
             </div>
-
-            {/* City Field */}
             <div className={styles.inputContainer}>
               <label className={styles.label}>City</label>
               <input
@@ -242,8 +221,6 @@ const DashoardProfile = () => {
                 onChange={handleInputChange}
               />
             </div>
-
-            {/* State Field */}
             <div className={styles.inputContainer}>
               <label className={styles.label}>State</label>
               <input
@@ -256,8 +233,6 @@ const DashoardProfile = () => {
                 onChange={handleInputChange}
               />
             </div>
-
-            {/* Postal Code Field */}
             <div className={styles.inputContainer}>
               <label className={styles.label}>Postal Code</label>
               <input
@@ -270,8 +245,6 @@ const DashoardProfile = () => {
                 onChange={handleInputChange}
               />
             </div>
-
-            {/* Country Field */}
             <div className={styles.inputContainer}>
               <label className={styles.label}>Country</label>
               <input

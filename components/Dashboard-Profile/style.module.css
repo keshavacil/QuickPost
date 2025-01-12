@@ -8,6 +8,7 @@
 .header{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .editButton{
   padding: 0.5rem;
@@ -48,6 +49,7 @@
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
   color: black;
+  border: 1px solid grey;
 }
 .inputContainer {
   display: flex;
@@ -91,7 +93,21 @@
   flex-wrap: wrap;
   margin-top: 2rem;
 }
+@media (max-width: 768px) {
+  .content{
+    overflow-y: scroll;
+    margin: 0;
+    border: none;
+  }
+  .form{
+    flex-direction: column;
+    
+  }
+  .inputContainer{
+    width: 100%;
+  }
 
+}
 .profile{
   height: 84vh;
 }
@@ -100,6 +116,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); 
+  height: 84vh;
+  background-color: rgba(0, 0, 0, 0.9); 
+  z-index: 99;
 }

@@ -21,7 +21,7 @@
   cursor: pointer;
 }
 .icon {
-  color: gray;
+  margin: 0 10px;
 }
 .button:hover {
   background-color: aqua;
@@ -172,11 +172,11 @@
 .filePreviewContainer {
   margin-bottom: 15px;
 }
-.previewContainer{
+.previewContainer {
   min-height: 400px;
   min-width: 350px;
 }
-.uploadButtonContainer{
+.uploadButtonContainer {
   display: flex;
   flex-direction: column;
 }
@@ -208,8 +208,7 @@
   background-color: #365899;
 }
 
-
-.buttonBox{
+.buttonBox {
   display: flex;
   justify-content: space-around;
 }
@@ -221,11 +220,25 @@
   text-align: center;
 }
 
-.previewUploadSection{
+.previewUploadSection {
   display: flex;
-  
 }
 
-.stepContent{
+.stepContent {
   min-height: 400px;
+}
+
+@media (max-width: 768px) {
+  .Social{
+    border: none;
+  }
+  .icon {
+    margin: 0;
+  }
+  .icon1 {
+    display: none;
+  }
+  .SocialIdInfo {
+    display: none;
+  }
 }

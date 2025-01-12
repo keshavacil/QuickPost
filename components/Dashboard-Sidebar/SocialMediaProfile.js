@@ -19,7 +19,7 @@ const SocialMediaProfile = ({ platform, user, openModal }) => {
       <FontAwesomeIcon
         icon={platformInfo.icon}
         size="2x"
-        style={{ margin: "0 10px", color: platformInfo.color }}
+        style={{ color: platformInfo.color }}
       />
       <div className={styles.SocialIdInfo}>
         <p className={styles.platformName}>{platformInfo.name}</p>

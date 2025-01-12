@@ -1,12 +1,9 @@
 export const updateUserData = async (data) => {
-  console.log("Initial Updated User Data:", data);
-
-  const uuid = localStorage.getItem("uuid");
+ 
   const authToken = localStorage.getItem("authToken");
-  // console.log("uuid", uuid);
-  // console.log("authToken", authToken);
+ 
 
-  if (!uuid || !authToken) {
+  if (!authToken) {
     return { success: false, message: "User is not logged in." };
   }
 
@@ -17,7 +14,6 @@ export const updateUserData = async (data) => {
     return acc;
   }, {});
 
-  updatedData.uuid = uuid;
 
   if (Object.keys(updatedData).length === 0) {
     return { success: false, message: "No data to update." };
@@ -25,7 +21,7 @@ export const updateUserData = async (data) => {
 
   try {
     const response = await fetch(
-      `https://thundering-adara-mramitdas-10783ebf.koyeb.app/api/v1/user/${uuid}`,
+      `https://thundering-adara-mramitdas-10783ebf.koyeb.app/api/v1/user/update`,
       {
         method: "PUT",
         headers: {
@@ -35,13 +31,13 @@ export const updateUserData = async (data) => {
         body: JSON.stringify(updatedData),
       }
     );
-    console.log("body data", JSON.stringify(updatedData));
+    // console.log("body data", JSON.stringify(updatedData));
 
     const responseText = await response.text();
     // console.log("Raw Response Text:", responseText);
 
     const result = JSON.parse(responseText);
-    console.log("Updated User Data:", result);
+    // console.log("Updated User Data:", result);
 
     if (response.ok) {
       if (result && result.user) {

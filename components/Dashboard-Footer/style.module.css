@@ -5,3 +5,18 @@
     padding: 0.5rem 2rem;
     border-top: 1px solid gray;
 }
+@media (max-width: 768px) {
+    .footer{
+        position: relative;
+        padding: 1.5rem 0.7rem;
+
+    }
+    .social{
+        display: flex;
+    }
+    .feedback{
+        position: absolute;
+        left: 10px;
+        bottom: 90px;
+    }
+}

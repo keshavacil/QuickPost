@@ -83,7 +83,7 @@ const DashoardHeader = () => {
         />
       </div>
       <div
-        className={`md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 ${
+        className={`md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10 ${
           isMenuOpen ? "block" : "hidden"
         }`}
       >
@@ -117,13 +117,13 @@ const DashoardHeader = () => {
             <li className="cursor-pointer">Help</li>
             <li
               onClick={handleUpgrade}
-              className="cursor-pointer px-4 py-2 w-full text-center rounded-md hover:bg-blue-600 hover:text-white"
+              className="cursor-pointer"
             >
               Upgrade
             </li>
             <li
               onClick={handleLogout}
-              className="cursor-pointer px-4 py-2 w-full text-center rounded-md hover:bg-red-600 hover:text-white"
+              className="cursor-pointer"
             >
               Logout
             </li>
