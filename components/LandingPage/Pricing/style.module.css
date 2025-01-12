@@ -46,7 +46,8 @@
     padding: 2.5rem 0;
   }
   .Pricing h2 {
-    width: 100%;
+    width: 90%;
+    font-size: 38px;
   }
   .Pricing p {
     width: 90%;
