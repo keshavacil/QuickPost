@@ -40,3 +40,15 @@
   color: white;
   padding: 12px 24px;
 }
+
+@media (max-width: 768px) {
+  .Pricing {
+    padding: 2.5rem 0;
+  }
+  .Pricing h2 {
+    width: 100%;
+  }
+  .Pricing p {
+    width: 100%;
+  }
+}

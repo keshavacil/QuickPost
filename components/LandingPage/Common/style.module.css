@@ -40,3 +40,18 @@
 .isEnabled{
     display: var(--display);
 }
+@media (max-width: 768px) {
+  .common {
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+  }
+  .left {
+    width: 100%;
+  }
+  .left h2 {
+    font-size: 46px;
+  }
+  .left button{
+    margin-bottom: 0;
+  }
+}

@@ -79,3 +79,27 @@
   );
   background-blend-mode: multiply;
 }
+
+@media (max-width: 768px) {
+.SocialPotential{
+  padding: 2.5rem;
+}
+.One h2{
+  font-size: 44px;
+}
+.Two{
+  flex-direction: column;
+}
+.InnerTwo{
+  width: 100%;
+  flex-direction: column;
+  overflow: hidden;
+}
+.left{
+  padding: 1.5rem;
+}
+.Three{
+  flex-direction: column;
+  overflow: hidden;
+}
+}

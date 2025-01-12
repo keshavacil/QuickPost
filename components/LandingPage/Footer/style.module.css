@@ -36,3 +36,14 @@
   text-align: left;
   margin-bottom: 1rem;
 }
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .right{
+    flex-wrap: wrap;
+    margin-top: 1.2rem;
+    gap: 0 2rem;
+  }
+}
